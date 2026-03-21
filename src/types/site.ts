@@ -20,7 +20,8 @@ export interface HeroContent {
 
 export interface AboutContent {
   desktopHeading: string;
-  mobileHeading: string;
+  mobileHeadingTop: string;
+  mobileHeadingBottom: string;
   paragraphs: string[];
   mobileParagraphs: string[];
   stats: { label: string; value: string }[];

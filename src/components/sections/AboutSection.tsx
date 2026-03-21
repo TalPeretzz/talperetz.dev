@@ -17,17 +17,19 @@ export default function AboutSection() {
 
         {/* Mobile */}
         <FadeInView className="md:hidden max-w-sm mx-auto text-center">
-          <span
-            className="inline-block h-px w-12 bg-[#E2E8F0] mb-6"
-            aria-hidden="true"
-          />
+
           <p
-            className="font-[family-name:var(--font-headline)] text-3xl font-black tracking-tighter mb-6 uppercase text-[#2C3E50]"
+            className="font-[family-name:var(--font-headline)] tracking-tighter mb-6 uppercase text-[#2C3E50] whitespace-pre-line"
             role="heading"
             aria-level={2}
             aria-hidden="true"
           >
-            {aboutContent.mobileHeading}
+            <span className="block text-2xl font-bold text-[#526074]">
+              {aboutContent.mobileHeadingTop}
+            </span>
+            <span className="block text-4xl font-black">
+              {aboutContent.mobileHeadingBottom}
+            </span>
           </p>
           <div className="space-y-6 text-lg text-[#526074] leading-loose">
             {aboutContent.mobileParagraphs.map((html, i) => (

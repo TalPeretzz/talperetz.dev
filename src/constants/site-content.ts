@@ -12,7 +12,8 @@ export const heroContent: HeroContent = {
 
 export const aboutContent: AboutContent = {
   desktopHeading: "BUILDING SYSTEMS THAT SCALE",
-  mobileHeading: "ABOUT TAL",
+  mobileHeadingTop: "BUILDING SYSTEMS",
+  mobileHeadingBottom: "THAT SCALE",
   paragraphs: [
     "I build <strong>backend systems</strong> that turn complex product and business requirements into reliable, scalable software. My work focuses on <strong>architecture</strong>, APIs, distributed systems, and engineering decisions that support real product growth.",
     "I approach software with a <strong>product-driven</strong> mindset, balancing technical clarity, maintainability, and long-term scalability. From system design to delivery, I focus on building solutions that work well today and remain resilient as complexity grows.",
