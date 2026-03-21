@@ -40,12 +40,9 @@ export default function HeroSection() {
 
           <h1
             id="hero-heading"
-            className="font-[family-name:var(--font-headline)] text-5xl md:text-8xl font-extrabold tracking-[-0.03em] uppercase text-[#2C3E50] leading-[0.9] mb-8"
+            className="font-[family-name:var(--font-headline)] text-5xl md:text-8xl font-extrabold tracking-[-0.03em] uppercase text-[#2C3E50] leading-[0.9] mb-8 whitespace-pre-line"
           >
-            <span className="hidden md:inline whitespace-pre-line">{heroContent.desktopHeading}</span>
-            <span className="md:hidden whitespace-pre-line">
-              {heroContent.mobileHeading}
-            </span>
+            {heroContent.heading}
           </h1>
 
           <p className="font-[family-name:var(--font-body)] text-lg md:text-xl text-[#526074] leading-[1.75] mb-12 max-w-[38rem] mx-auto md:mx-0">

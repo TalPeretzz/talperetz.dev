@@ -15,57 +15,39 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-6">
         <h2 id="about-heading" className="sr-only">About</h2>
 
-        {/* Mobile */}
-        <FadeInView className="md:hidden max-w-sm mx-auto text-center">
-
-          <p
-            className="font-[family-name:var(--font-headline)] tracking-tighter mb-6 uppercase text-[#2C3E50] whitespace-pre-line"
-            role="heading"
-            aria-level={2}
-            aria-hidden="true"
-          >
-            <span className="block text-2xl font-bold text-[#526074]">
-              {aboutContent.mobileHeadingTop}
-            </span>
-            <span className="block text-4xl font-black">
-              {aboutContent.mobileHeadingBottom}
-            </span>
-          </p>
-          <div className="space-y-6 text-lg text-[#526074] leading-loose">
-            {aboutContent.mobileParagraphs.map((html, i) => (
-              <p key={i} dangerouslySetInnerHTML={{ __html: html }} />
-            ))}
-          </div>
-          <div className="grid grid-cols-2 gap-4 mt-12 pt-12 border-t border-[#E2E8F0]">
-            {aboutContent.stats.map((stat) => (
-              <div key={stat.label}>
-                <SectionLabel className="mb-2">{stat.label}</SectionLabel>
-                <p className="text-[#2C3E50] font-medium">
-                  {stat.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </FadeInView>
-
-        {/* Desktop */}
-        <FadeInView className="hidden md:grid grid-cols-12 gap-12 items-start">
-          <div className="col-span-12 md:col-span-5">
+        <FadeInView className="max-w-sm mx-auto text-center md:max-w-none md:mx-0 md:text-left md:grid md:grid-cols-12 md:gap-12 md:items-start">
+          <div className="md:col-span-5">
             <div
-              className="w-px bg-[#E2E8F0] mb-6"
+              className="hidden md:block w-px bg-[#E2E8F0] mb-6"
               aria-hidden="true"
             />
             <p
-              className="font-[family-name:var(--font-headline)] text-3xl md:text-5xl font-black tracking-tighter uppercase text-[#2C3E50]"
+              className="font-[family-name:var(--font-headline)] tracking-tighter mb-6 uppercase text-[#2C3E50]"
               role="heading"
               aria-level={2}
               aria-hidden="true"
             >
-              {aboutContent.desktopHeading}
+              <span className="md:hidden">
+                <span className="block text-2xl font-bold text-[#526074]">
+                  {aboutContent.mobileHeadingTop}
+                </span>
+                <span className="block text-4xl font-black">
+                  {aboutContent.mobileHeadingBottom}
+                </span>
+              </span>
+              <span className="hidden md:block text-3xl md:text-5xl font-black">
+                {aboutContent.desktopHeading}
+              </span>
             </p>
           </div>
-          <div className="col-span-12 md:col-span-7">
-            <div className="space-y-6 text-lg md:text-xl text-[#526074] leading-relaxed max-w-3xl">
+
+          <div className="md:col-span-7">
+            <div className="md:hidden space-y-6 text-lg text-[#526074] leading-loose">
+              {aboutContent.mobileParagraphs.map((html, i) => (
+                <p key={i} dangerouslySetInnerHTML={{ __html: html }} />
+              ))}
+            </div>
+            <div className="hidden md:block space-y-6 text-lg md:text-xl text-[#526074] leading-relaxed max-w-3xl">
               {aboutContent.paragraphs.map((html, i) => (
                 <p key={i} dangerouslySetInnerHTML={{ __html: html }} />
               ))}

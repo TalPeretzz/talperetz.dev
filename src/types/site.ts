@@ -10,8 +10,7 @@ export interface BottomNavItem {
 }
 
 export interface HeroContent {
-  desktopHeading: string;
-  mobileHeading: string;
+  heading: string;
   subtitle: string;
   description: string;
   primaryCta: { label: string; href: string };

@@ -1,8 +1,7 @@
 import type { HeroContent, AboutContent, Article, WritingSectionContent, ExpertiseCategory, ContactContent, FooterContent } from "@/types/site";
 
 export const heroContent: HeroContent = {
-  desktopHeading: "TAL\nPERETZ",
-  mobileHeading: "TAL\nPERETZ",
+  heading: "TAL\nPERETZ",
   subtitle: "Senior Engineer\nBackend Systems & Architecture",
   description:
     "I design and build backend systems that connect product needs, business logic, and scalable architecture.",
