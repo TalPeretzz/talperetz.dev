@@ -11,28 +11,53 @@ const manrope = Manrope({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const SITE_URL = "https://talperetz-dev.vercel.app";
+const TITLE = "Tal Peretz | Senior Engineer";
+const DESCRIPTION =
+  "Tal Peretz is a senior engineer focused on backend systems, APIs, distributed architecture, and product-driven software design.";
+
 export const metadata: Metadata = {
-  title: "Tal Peretz | Senior Full Stack Engineer",
-  description:
-    "Building scalable, product-driven systems with a backend-first mindset. Specializing in high-performance APIs, microservices, and reliable technical architectures.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: [
+    "Tal Peretz",
+    "Senior Engineer",
+    "Backend Engineer",
+    "Backend Systems",
+    "APIs",
+    "Distributed Systems",
+    "System Design",
+    "TypeScript",
+    "Node.js",
+    "NestJS",
+  ],
   openGraph: {
-    title: "Tal Peretz | Senior Full Stack Engineer",
-    description:
-      "Building scalable, product-driven systems with a backend-first mindset.",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Tal Peretz",
     type: "website",
     locale: "en_US",
-    url: "https://talperetz.dev",
-    siteName: "Tal Peretz",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tal Peretz | Senior Full Stack Engineer",
-    description:
-      "Building scalable, product-driven systems with a backend-first mindset.",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
+  alternates: {
+    canonical: SITE_URL,
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
