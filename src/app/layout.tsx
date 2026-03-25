@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import SkipToContent from "@/components/ui/SkipToContent";
 import CookieConsent from "@/components/ui/CookieConsent";
+import { Analytics } from "@vercel/analytics/next";
 import "./styles/base.css";
 
 const manrope = Manrope({
@@ -78,6 +79,7 @@ export default function RootLayout({
         <SkipToContent />
         {children}
         <CookieConsent />
+        <Analytics />
       </body>
     </html>
   );
