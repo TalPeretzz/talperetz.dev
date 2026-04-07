@@ -6,6 +6,7 @@ import {
   setConsentPreferences,
   hasConsented,
 } from "@/lib/cookies";
+import { clearUtmParams } from "@/lib/utm";
 import type { CookiePreferences } from "@/types/cookies";
 import { cn } from "@/lib/utils";
 
@@ -65,6 +66,7 @@ export default function CookieConsent() {
 
   const saveAndClose = useCallback((prefs: CookiePreferences) => {
     setConsentPreferences(prefs);
+    if (!prefs.analytics) clearUtmParams();
     setVisible(false);
     setShowCustomize(false);
   }, []);

@@ -2,6 +2,12 @@ import type { CookiePreferences } from "@/types/cookies";
 
 const STORAGE_KEY = "cookie-consent-preferences";
 
+export const COOKIE_CONSENT_UPDATED_EVENT = "cookie-consent-updated";
+
+function notifyConsentChanged(): void {
+  window.dispatchEvent(new Event(COOKIE_CONSENT_UPDATED_EVENT));
+}
+
 export function getConsentPreferences(): CookiePreferences | null {
   if (typeof window === "undefined") return null;
 
@@ -19,6 +25,7 @@ export function setConsentPreferences(prefs: CookiePreferences): void {
 
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    notifyConsentChanged();
   } catch {
     // localStorage unavailable
   }
@@ -41,6 +48,7 @@ export function clearConsent(): void {
 
   try {
     localStorage.removeItem(STORAGE_KEY);
+    notifyConsentChanged();
   } catch {
     // localStorage unavailable
   }
